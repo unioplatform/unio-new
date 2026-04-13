@@ -1,34 +1,19 @@
 
 
-<<<<<<< HEAD
 > @unio/types@1.0.0 build /Users/christymugomba/Desktop/Buisness/unio-new-main/packages/types
-=======
-> @unio/types@1.0.0 build /Users/christymugomba/Desktop/Buisness/unio/packages/types
->>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 > tsup
 
 [34mCLI[39m Building entry: src/index.ts
 [34mCLI[39m Using tsconfig: tsconfig.json
 [34mCLI[39m tsup v8.5.1
-<<<<<<< HEAD
 [34mCLI[39m Using tsup config: /Users/christymugomba/Desktop/Buisness/unio-new-main/packages/types/tsup.config.ts
-=======
-[34mCLI[39m Using tsup config: /Users/christymugomba/Desktop/Buisness/unio/packages/types/tsup.config.ts
->>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 [34mCLI[39m Target: esnext
 [34mCLI[39m Cleaning output folder
 [34mESM[39m Build start
 Generated an empty chunk: "index".
 [32mESM[39m [1mdist/index.js     [22m[32m68.00 B[39m
 [32mESM[39m [1mdist/index.js.map [22m[32m69.00 B[39m
-<<<<<<< HEAD
 [32mESM[39m ⚡️ Build success in 16ms
 DTS Build start
-DTS ⚡️ Build success in 330ms
+DTS ⚡️ Build success in 367ms
 DTS dist/index.d.ts 3.59 KB
-=======
-[32mESM[39m ⚡️ Build success in 19ms
-DTS Build start
-DTS ⚡️ Build success in 373ms
-DTS dist/index.d.ts 3.32 KB
->>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167

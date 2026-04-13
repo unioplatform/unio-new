@@ -140,7 +140,6 @@ var Text = forwardRef(
   }
 );
 Text.displayName = "Text";
-<<<<<<< HEAD
 var Button = forwardRef(
   ({ children, variant = "primary", size = "md", className = "", as = "button", ...props }, ref) => {
     const base = "inline-flex items-center justify-center rounded-md font-semibold transition-all duration-200 select-none active:scale-[0.98]";
@@ -165,74 +164,6 @@ var Button = forwardRef(
     return /* @__PURE__ */ jsx(Component, { className: classes, ref, ...props, children });
   }
 );
-=======
-var Button = forwardRef(function Button2({
-  children,
-  variant = "primary",
-  size = "md",
-  className = "",
-  disableFocusRing = true,
-  fullWidth = false,
-  // ✅ Defaulted to false
-  as = "button",
-  ...props
-}, ref) {
-  const base = "items-center justify-center rounded-md font-ui font-semibold leading-none transition-all duration-200 whitespace-nowrap select-none";
-  const sizeClasses2 = {
-    sm: "h-9 px-4 text-small",
-    md: "h-11 px-5 text-base",
-    lg: "h-12 px-6 text-large"
-  };
-  const iconSizeClasses = {
-    sm: "h-9 w-9 text-small",
-    md: "h-11 w-11 text-base",
-    lg: "h-12 w-12 text-large"
-  };
-  const variantStyles = {
-    primary: [
-      "bg-accent text-background",
-      "hover:bg-accent-hover",
-      "active:translate-y-[1px] active:shadow-sm",
-      "shadow-sm hover:shadow-md",
-      "border border-transparent"
-    ].join(" "),
-    secondary: [
-      "border border-border-soft text-primary bg-transparent",
-      "hover:bg-foreground-muted/10",
-      "active:bg-foreground-muted/20"
-    ].join(" "),
-    "outline-accent": [
-      "border border-accent text-accent bg-transparent",
-      "hover:bg-accent/10",
-      "active:bg-accent/20"
-    ].join(" "),
-    ghost: [
-      "border border-transparent",
-      "text-foreground-muted",
-      "hover:bg-background-secondary/40",
-      "active:bg-background-secondary/60"
-    ].join(" "),
-    icon: [
-      "border border-transparent",
-      "text-foreground-muted",
-      "hover:bg-background-secondary/40",
-      "active:bg-background-secondary/60"
-    ].join(" ")
-  };
-  const focusStyles = disableFocusRing ? "focus:outline-none" : "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-  const classes = clsx3(
-    base,
-    // Use flex vs inline-flex based on fullWidth
-    fullWidth ? "flex w-full" : "inline-flex",
-    variant === "icon" ? iconSizeClasses[size] : sizeClasses2[size],
-    variantStyles[variant],
-    focusStyles,
-    className
-  );
-  const Component = as;
-  return /* @__PURE__ */ jsx(Component, { className: classes, ref, ...props, children });
-});
->>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 Button.displayName = "Button";
 
 export { Button, Logo, Text };
