@@ -1,0 +1,23 @@
+
+
+> @unio/config@1.0.0 build /Users/christymugomba/Desktop/Buisness/unio/packages/config
+> tsup
+
+[34mCLI[39m Building entry: src/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.1
+[34mCLI[39m Using tsup config: /Users/christymugomba/Desktop/Buisness/unio/packages/config/tsup.config.ts
+[34mCLI[39m Target: esnext
+[34mCLI[39m Cleaning output folder
+[34mESM[39m Build start
+[34mCJS[39m Build start
+[32mCJS[39m [1mdist/index.cjs     [22m[32m431.00 B[39m
+[32mCJS[39m [1mdist/index.cjs.map [22m[32m158.00 B[39m
+[32mCJS[39m ⚡️ Build success in 10ms
+[32mESM[39m [1mdist/index.js     [22m[32m33.00 B[39m
+[32mESM[39m [1mdist/index.js.map [22m[32m71.00 B[39m
+[32mESM[39m ⚡️ Build success in 11ms
+DTS Build start
+DTS ⚡️ Build success in 300ms
+DTS dist/index.d.ts  13.00 B
+DTS dist/index.d.cts 13.00 B
