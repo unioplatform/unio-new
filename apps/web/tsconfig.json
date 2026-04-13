@@ -19,10 +19,7 @@
       "@/*": ["src/*"],
       "@unio/api": ["../../packages/api/src"],
       "@unio/chrome": ["../../packages/chrome/src"],
-<<<<<<< HEAD
       "@unio/data": ["../../packages/data/src"],
-=======
->>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
       "@unio/ui": ["../../packages/ui/src"],
       "@unio/lib": ["../../packages/lib/src"]
     }
