@@ -1,11 +1,16 @@
 
 
+<<<<<<< HEAD
 > @unio/chrome@1.0.0 build /Users/christymugomba/Desktop/Buisness/unio-new-main/packages/chrome
+=======
+> @unio/chrome@1.0.0 build /Users/christymugomba/Desktop/Buisness/unio/packages/chrome
+>>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 > tsup
 
 [34mCLI[39m Building entry: src/index.ts
 [34mCLI[39m Using tsconfig: tsconfig.json
 [34mCLI[39m tsup v8.5.1
+<<<<<<< HEAD
 [34mCLI[39m Using tsup config: /Users/christymugomba/Desktop/Buisness/unio-new-main/packages/chrome/tsup.config.ts
 [34mCLI[39m Target: esnext
 [34mCLI[39m Cleaning output folder
@@ -15,4 +20,15 @@
 [32mESM[39m ⚡️ Build success in 41ms
 DTS Build start
 DTS ⚡️ Build success in 575ms
+=======
+[34mCLI[39m Using tsup config: /Users/christymugomba/Desktop/Buisness/unio/packages/chrome/tsup.config.ts
+[34mCLI[39m Target: esnext
+[34mCLI[39m Cleaning output folder
+[34mESM[39m Build start
+[32mESM[39m [1mdist/index.js     [22m[32m8.73 KB[39m
+[32mESM[39m [1mdist/index.js.map [22m[32m17.91 KB[39m
+[32mESM[39m ⚡️ Build success in 36ms
+DTS Build start
+DTS ⚡️ Build success in 600ms
+>>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 DTS dist/index.d.ts 739.00 B

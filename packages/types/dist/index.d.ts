@@ -134,6 +134,7 @@ interface ProfileDTO {
     hasPendingRequest: boolean;
 }
 
+<<<<<<< HEAD
 interface SubscriptionPackage {
     tier: SubscriptionTier;
     description: string;
@@ -147,3 +148,6 @@ interface SubscriptionPackage {
 }
 
 export type { AccountRole, AuthReturn, AuthUser, ConnectionStats, ConnectionStatus, LoginPayload, ProfileDTO, ProfileEducation, ProfileExperience, SignupPayload, SubscriptionPackage, SubscriptionTier, User, UserStatus };
+=======
+export type { AccountRole, AuthReturn, AuthUser, ConnectionStats, ConnectionStatus, LoginPayload, ProfileDTO, ProfileEducation, ProfileExperience, SignupPayload, SubscriptionTier, User, UserStatus };
+>>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167

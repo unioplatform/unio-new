@@ -1,4 +1,5 @@
 /* apps/web/src/styles/globals.css */
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap");
 /* 🔥 NOTHING ABOVE THESE IMPORTS */
@@ -8,10 +9,16 @@
 @import "./layout.css";
 
 /* 🔥 THEN TAILWIND */
+=======
+
+@import "./tokens.css";
+
+>>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 /* 🔥 BASE STYLES */
 html {
   font-size: 16px;
@@ -26,4 +33,45 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+=======
+/* 🔗 SYSTEM FILES */
+@import "./reset.css";
+@import "./typography.css";
+@import "./layout.css";
+
+/* ---------------- BASE ---------------- */
+@layer base {
+  html {
+    font-size: 16px;
+    height: 100%;
+    overflow-y: scroll;
+
+    /* 🔥 CRITICAL: makes text consistent across browsers */
+    letter-spacing: -0.015em;
+
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+
+    /* Prevent Safari zoom weirdness */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-text-primary antialiased;
+    min-height: 100%;
+
+    /* 🔥 CROSS-BROWSER FIX */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Better text rendering */
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Apply smoothing everywhere */
+  * {
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+  }
+>>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
 }

@@ -21,6 +21,10 @@
   }
 
   button {
+<<<<<<< HEAD
+=======
+    all: unset;
+>>>>>>> 9606bfe728f0728e4a01299924ecccb4bcad0167
     cursor: pointer;
   }
 }
