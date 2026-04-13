@@ -1,7 +1,8 @@
 // 📁 apps/web/src/features/landing/SubscriptionSection.tsx
 import React from "react";
-import { PackageCard, SectionHeader } from "./components";
+import { PackageCard } from "./components";
 import { useSubscriptionPackages } from "./hooks";
+import { SectionHeader } from "../../shared"; 
 
 export const SubscriptionSection: React.FC = () => {
   const { packages, isLoading } = useSubscriptionPackages();

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import {  
   // Hero,
   // Playground,
-  // GlobalNetwork,
+  GlobalNetwork,
   SubscriptionSection, 
 } from "./sections";
 
@@ -22,7 +22,7 @@ export const LandingPage: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="w-full"
-    >
+    > 
       {/* 📌 HERO */}
       {/* <Hero /> */}
 
@@ -30,7 +30,7 @@ export const LandingPage: React.FC = () => {
       {/* <Playground /> */}
 
       {/* 🌍 GLOBAL MAP */}
-      {/* <GlobalNetwork /> */}
+      <GlobalNetwork />
 
       {/* 💎 SUBSCRIPTIONS */}
       <SubscriptionSection />

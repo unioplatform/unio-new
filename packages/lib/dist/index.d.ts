@@ -97,4 +97,8 @@ declare const APP: {
     readonly AUTHOR: "Unio Labs";
 };
 
-export { APP, ENV, FOOTER_LINKS, type FooterSectionKey, LINKS, ROUTES };
+declare const mapCoordinates: [number, number][];
+
+declare const generatePath: (pathGenerator: ((feature: any) => string | undefined) | null | undefined, feature: any) => string;
+
+export { APP, ENV, FOOTER_LINKS, type FooterSectionKey, LINKS, ROUTES, generatePath, mapCoordinates };
