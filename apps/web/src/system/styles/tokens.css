@@ -1,0 +1,39 @@
+/* tokens.css */
+
+:root {
+  /* LAYOUT */
+  --max-width: 1128px;
+  --max-width-marketing: 1320px;
+  --container-padding: 24px;
+  --layout-gap: 24px;
+
+  --section-lg: 120px;
+  --section-md: 96px;
+  --section-sm: 72px;
+
+  /* COLORS */
+  --bg-0: 0 0% 100%;
+  --text-1: 222 47% 15%;
+  --text-2: 222 22% 34%;
+  --text-3: 215 15% 38%;
+
+  --accent-1: 145 18% 41%;
+  --accent-2: 145 18% 49%;
+  --accent-bg: 145 18% 93%;
+
+  --border-raw: 222 20% 70%;
+  --border-subtle-raw: 222 15% 80%;
+  --border-faint-raw: 222 15% 90%;
+}
+
+/* 🌙 DARK MODE */
+:root.dark {
+  --bg-0: 222 47% 11%;
+  --text-1: 220 20% 94%;
+  --text-2: 220 15% 88%;
+  --text-3: 220 15% 65%;
+
+  --accent-1: 145 18% 51%;
+  --accent-2: 145 18% 62%;
+  --accent-bg: 145 18% 20%;
+}

@@ -1,0 +1,30 @@
+@layer components {
+
+  #root {
+    @apply min-h-full flex flex-col;
+  }
+
+  .unio-layout {
+    @apply w-full flex justify-center;
+  }
+
+  .unio-container {
+    @apply w-full max-w-unio-max mx-auto px-unio-padding;
+  }
+
+  .unio-container-marketing {
+    @apply w-full max-w-unio-marketing mx-auto px-unio-padding;
+  }
+
+  .unio-section {
+    @apply py-section-md;
+  }
+
+  .unio-section-lg {
+    @apply py-section-lg;
+  }
+
+  .unio-section-sm {
+    @apply py-section-sm;
+  }
+}

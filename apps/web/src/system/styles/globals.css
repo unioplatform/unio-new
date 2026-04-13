@@ -1,0 +1,29 @@
+/* apps/web/src/styles/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap");
+/* 🔥 NOTHING ABOVE THESE IMPORTS */
+@import "./tokens.css";
+@import "./reset.css";
+@import "./typography.css";
+@import "./layout.css";
+
+/* 🔥 THEN TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔥 BASE STYLES */
+html {
+  font-size: 16px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  background: hsl(var(--bg-0));
+  color: hsl(var(--text-1));
+  min-height: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

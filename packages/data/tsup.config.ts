@@ -1,0 +1,21 @@
+import { defineConfig } from "tsup";
+
+export default defineConfig({
+  entry: ["src/index.ts"],
+  format: ["esm"],
+
+  dts: {
+    resolve: true,
+  },
+
+  clean: true,
+  sourcemap: true,
+  splitting: false,
+  target: "esnext",
+  treeshake: true,
+
+  external: [
+    "@unio/types",
+    "@unio/lib"
+  ]
+});
