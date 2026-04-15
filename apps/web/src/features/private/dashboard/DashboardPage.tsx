@@ -3,7 +3,7 @@ import { Text, Button } from "@unio/ui";
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col h-full pb-12 overflow-hidden">
+    <div className="flex flex-col h-full overflow-hidden">
       
       {/* 🔥 FLEX LAYOUT INSTEAD OF GRID */}
       <div className="flex gap-6 flex-1 min-h-0">
