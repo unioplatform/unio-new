@@ -12,4 +12,13 @@ declare const getSubscriptionByTier: (tier: SubscriptionPackage["tier"]) => Subs
 
 declare const subscriptionData: SubscriptionPackage[];
 
-export { getSubscriptionByTier, getSubscriptionPackages, subscriptionData };
+/**
+ * ✅ Canonical Gender Options
+ * Aligned with backend enums and UI Select requirements.
+ */
+declare const genders: {
+    label: string;
+    value: string;
+}[];
+
+export { genders, getSubscriptionByTier, getSubscriptionPackages, subscriptionData };

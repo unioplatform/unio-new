@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// 📁 packages/api-client/src/core/endpoints.ts
+// 📁 packages/api/src/core/endpoints.ts
 // Unio — The Single Source of Truth for all API Routes
 // -----------------------------------------------------------------------------
 

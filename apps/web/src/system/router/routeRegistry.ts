@@ -14,13 +14,16 @@ import { networkingRoutes } from "@/features/private/networking/routes";
 import { messagesRoutes } from "@/features/private/messages/routes";
 import { eventsRoutes } from "@/features/private/events/routes";
 import { playgroundRoutes } from "@/features/private/playground/routes";
+import { loginRoutes } from "@/features/public/auth/login/routes";
+import { signupRoutes } from "@/features/public/auth/signup/routes";
 
 /**
  * Publicly accessible routes (Landing, Login, Signup, etc.)
  */
 export const publicRoutes: AppRoute[] = [
   ...landingRoutes, 
-  // ...authRoutes,
+  ...loginRoutes, 
+  ...signupRoutes
 ]; 
  
 /**

@@ -115,10 +115,79 @@ interface DropdownItemBaseProps {
 type DropdownItemComponent = PolymorphicComponent<DropdownItemBaseProps>;
 declare const DropdownItem: DropdownItemComponent;
 
+interface FloatingInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label: string;
+    error?: string;
+    icon?: React.ReactNode;
+}
+declare const FloatingInput: React.ForwardRefExoticComponent<FloatingInputProps & React.RefAttributes<HTMLInputElement>>;
+
+interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label: string;
+    error?: string;
+}
+declare const PasswordInput: React.ForwardRefExoticComponent<PasswordInputProps & React.RefAttributes<HTMLInputElement>>;
+
+declare const AutocompleteSelect: React.ForwardRefExoticComponent<Omit<any, "ref"> & React.RefAttributes<any>>;
+
+interface CheckboxProps {
+    label: React.ReactNode;
+    checked?: boolean;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    disabled?: boolean;
+    name?: string;
+    onBlur?: (e: any) => void;
+    className?: string;
+    error?: string;
+}
+declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>>;
+
+interface SelectOptionType {
+    label: string;
+    value: string;
+}
+interface SelectProps {
+    label: string;
+    value?: string;
+    options: SelectOptionType[];
+    onValueChange: (v: string) => void;
+    error?: string;
+    name?: string;
+    onChange?: (e: any) => void;
+    onBlur?: (e: any) => void;
+    className?: string;
+}
+declare const Select: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLDivElement>>;
+
+interface UsernameInputProps {
+    label: string;
+    value?: string;
+    status: "idle" | "checking" | "available" | "taken";
+    suggestions: string[];
+    error?: string;
+    isSubmitted: boolean;
+    onChange: (value: string) => void;
+    onSelectSuggestion: (value: string) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
+declare const UsernameInput: React.FC<UsernameInputProps>;
+
+interface CalendarInputProps {
+    label: string;
+    value?: string;
+    onChange: (v: string) => void;
+    error?: string;
+    disabled?: boolean;
+    minYear?: number;
+    maxYear?: number;
+}
+declare const CalendarInput: React.FC<CalendarInputProps>;
+
 /**
  * Merges Tailwind classes without style conflicts.
  * Use this for all dynamic class mapping in the UI.
  */
 declare function cn(...inputs: ClassValue[]): string;
 
-export { Avatar, Button, Dropdown, DropdownItem, IconButton, Logo, type LogoProps, type PolymorphicComponent, type PolymorphicProps, type PolymorphicRef, Text, type TextProps, cn };
+export { AutocompleteSelect, Avatar, Button, CalendarInput, Checkbox, Dropdown, DropdownItem, FloatingInput, type FloatingInputProps, IconButton, Logo, type LogoProps, PasswordInput, type PasswordInputProps, type PolymorphicComponent, type PolymorphicProps, type PolymorphicRef, Select, type SelectOptionType, type SelectProps, Text, type TextProps, UsernameInput, cn };

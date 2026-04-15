@@ -25,6 +25,16 @@
     @apply w-full flex justify-start;
   }
 
+  /* 🔐 AUTH SPECIFIC LAYOUT */
+  .unio-container-auth {
+    @apply w-full max-w-unio-max mx-auto px-unio-padding;
+    /* This uses your 1128px max-width from the config */
+  }
+
+  .unio-auth-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center;
+  }
+
   /* sections stay same */
   .unio-section {
     @apply py-section-md;

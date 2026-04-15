@@ -13,7 +13,7 @@ export type LayoutComponent = ComponentType<{ children: ReactNode }>;
 export const layoutMap: Record<string, LayoutComponent> = {
   marketing: lazy(() => import("@/system/layouts/MarketingLayout")),
   private: lazy(() => import("@/system/layouts/PrivateLayout")),
-  // auth: lazy(() => import("@/features/public/auth/layouts/AuthLayout")),
+  auth: lazy(() => import("@/system/layouts/AuthLayout")),
 };
 
 // Extract valid keys for our type guard

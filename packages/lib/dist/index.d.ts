@@ -1,4 +1,5 @@
-import { NavItem } from '@unio/types';
+import { NavItem, UserSettings, AuthUser } from '@unio/types';
+import * as react from 'react';
 
 /**
  * 📚 Shared Footer Links
@@ -106,6 +107,67 @@ declare const mapCoordinates: [number, number][];
 
 declare const PRIVATE_NAV_ITEMS: NavItem[];
 
+declare const LOGIN_MESSAGES: readonly string[];
+declare const getDailyLoginMessage: () => string;
+
 declare const generatePath: (pathGenerator: ((feature: any) => string | undefined) | null | undefined, feature: any) => string;
 
-export { APP, ENV, FOOTER_LINKS, type FooterSectionKey, LINKS, PRIVATE_NAV_ITEMS, ROUTES, generatePath, mapCoordinates };
+interface RawApiUser {
+    id: string;
+    email: string;
+    username: string;
+    slug?: string;
+    isVerified?: boolean;
+    firstName?: string;
+    lastName?: string;
+    first_name?: string;
+    last_name?: string;
+    tier?: string;
+    subscription?: string;
+    accountRole?: string;
+    status?: string;
+    profilePicUrl?: string;
+    userSettings?: UserSettings | null;
+    profile?: {
+        firstName?: string;
+        lastName?: string;
+        verified?: boolean;
+        tier?: string;
+        bio?: string | null;
+        headline?: string | null;
+        location?: string | null;
+        avatarUrl?: string;
+        profilePicUrl?: string;
+    };
+}
+/**
+ * 🛡️ toAuthUser
+ * The Single Source of Truth for transforming API users into session users.
+ */
+declare function toAuthUser(user: RawApiUser | null | undefined): AuthUser | null;
+
+declare function useUsername(initialValue?: string): {
+    value: string;
+    status: "idle" | "checking" | "available" | "taken";
+    suggestions: string[];
+    setValue: react.Dispatch<react.SetStateAction<string>>;
+    onChange: (next: string) => Promise<void>;
+};
+
+/**
+ * ✅ useDebounce
+ * Returns a delayed version of a changing value.
+ * Renamed from useDebouncedValue for cleaner API consumption.
+ */
+declare function useDebounce<T>(value: T, delay?: number): T;
+/**
+ * ✅ useDebouncedCallback
+ * Returns a function that waits before invoking `fn`.
+ */
+type AnyFn = (...args: any[]) => any;
+declare function useDebouncedCallback<F extends AnyFn>(fn: F, delay?: number): {
+    callback: F;
+    cancel: () => void;
+};
+
+export { APP, ENV, FOOTER_LINKS, type FooterSectionKey, LINKS, LOGIN_MESSAGES, PRIVATE_NAV_ITEMS, ROUTES, generatePath, getDailyLoginMessage, mapCoordinates, toAuthUser, useDebounce, useDebouncedCallback, useUsername };

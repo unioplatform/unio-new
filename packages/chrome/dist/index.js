@@ -78,16 +78,16 @@ var PublicFooter = memo(({
   };
   return /* @__PURE__ */ jsxs("footer", { className: clsx2("w-full shrink-0 bg-background relative", className), children: [
     showTopBorder && /* @__PURE__ */ jsx("div", { className: "absolute top-0 left-0 right-0 h-px bg-accent w-full" }),
-    /* @__PURE__ */ jsx("div", { className: "max-w-[1320px] mx-auto px-[clamp(1rem,3vw,3rem)]", children: /* @__PURE__ */ jsxs("div", { className: clsx2("py-12 lg:py-16", containerClassName), children: [
-      /* @__PURE__ */ jsxs("nav", { className: "flex flex-col lg:flex-row justify-between items-start gap-12", children: [
-        /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-6 max-w-[280px]", children: [
+    /* @__PURE__ */ jsx("div", { className: "max-w-[1128px] mx-auto px-6", children: /* @__PURE__ */ jsxs("div", { className: clsx2("py-8 lg:py-10", containerClassName), children: [
+      /* @__PURE__ */ jsxs("nav", { className: "flex flex-col lg:flex-row justify-between items-start gap-10", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-4 max-w-[240px]", children: [
           /* @__PURE__ */ jsx(FooterBrand, { variant: brandVariant }),
-          /* @__PURE__ */ jsxs("button", { className: "flex items-center gap-2 w-fit px-4 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-all active:scale-95", children: [
-            /* @__PURE__ */ jsx("span", { className: "text-accent text-xs", children: "\u270E" }),
-            /* @__PURE__ */ jsx("span", { className: "text-sm font-semibold text-text-primary", children: "Contact Us" })
+          /* @__PURE__ */ jsxs("button", { className: "flex items-center gap-2 w-fit px-3 py-1.5 rounded-unio-sm border border-text-tertiary/30 bg-transparent hover:border-accent hover:bg-accent-bg/10 transition-all duration-200 active:scale-95 group", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-text-tertiary group-hover:text-accent text-[10px] transition-colors", children: "\u270E" }),
+            /* @__PURE__ */ jsx("span", { className: "text-xs font-semibold text-text-primary", children: "Contact Us" })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 xl:gap-16", children: [
+        /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-6 lg:gap-8 xl:gap-12", children: [
           /* @__PURE__ */ jsx(FooterColumn, { title: "Company", items: FOOTER_LINKS.company }),
           /* @__PURE__ */ jsx(FooterColumn, { title: "Resources", items: FOOTER_LINKS.resources }),
           /* @__PURE__ */ jsx(FooterColumn, { title: "Legal", items: FOOTER_LINKS.legal }),
@@ -99,6 +99,33 @@ var PublicFooter = memo(({
   ] });
 });
 PublicFooter.displayName = "PublicFooter";
+var AuthHeader = ({
+  tagline = "Build your future, your way."
+}) => {
+  return (
+    /* Increased pb-4 to pb-8 to give the login card more breathing room */
+    /* @__PURE__ */ jsx("header", { className: "w-full flex justify-center pt-2 pb-8 shrink-0", children: /* @__PURE__ */ jsxs(Link, { to: ROUTES.HOME, className: "flex flex-col items-center group select-none", children: [
+      /* @__PURE__ */ jsx(
+        Logo,
+        {
+          variant: "wordmark",
+          size: "md",
+          wordmarkClassName: "text-accent transition-colors group-hover:opacity-80",
+          className: "mb-0.5"
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        Text,
+        {
+          size: "tiny",
+          tone: "tertiary",
+          className: "opacity-80",
+          children: tagline
+        }
+      )
+    ] }) })
+  );
+};
 var containerVariants = {
   default: "max-w-[1128px] mx-auto",
   /* 🔥 KEY CHANGE: MUCH WIDER */
@@ -570,7 +597,21 @@ var PrivateShell = ({
     }
   );
 };
+var AuthShell = ({
+  children,
+  className,
+  tagline
+}) => {
+  return /* @__PURE__ */ jsxs("div", { className: cn$1(
+    "min-h-screen flex flex-col bg-background text-text-primary antialiased",
+    className
+  ), children: [
+    /* @__PURE__ */ jsx(AuthHeader, { tagline }),
+    /* @__PURE__ */ jsx("main", { className: "flex-1 flex flex-col pt-8 lg:pt-0 justify-center", children: /* @__PURE__ */ jsx("div", { className: "unio-container-auth", children: /* @__PURE__ */ jsx("div", { className: "animate-in fade-in slide-in-from-bottom-4 duration-700", children }) }) }),
+    /* @__PURE__ */ jsx(PublicFooter, {})
+  ] });
+};
 
-export { MarketingShell, PrivateShell, PublicFooter };
+export { AuthShell, MarketingShell, PrivateShell, PublicFooter };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

@@ -16,6 +16,10 @@ type SubscriptionTier = "BASE" | "PREMIUM" | "ELITE";
  */
 type UserStatus = "ONLINE" | "AWAY" | "OFFLINE" | "BUSY";
 
+interface UserSettings {
+    theme?: "light" | "dark" | "system";
+    notificationsEnabled?: boolean;
+}
 interface AuthUser {
     id: string;
     email: string;
@@ -28,6 +32,7 @@ interface AuthUser {
     isVerified: boolean;
     accountRole: AccountRole;
     tier: SubscriptionTier;
+    userSettings: UserSettings | null;
     profile?: {
         bio?: string | null;
         headline?: string | null;
@@ -143,6 +148,19 @@ interface NavItem {
     requiresAuth?: boolean;
 }
 
+/**
+ * Career Option (Lightweight Reference)
+ * Used in: Dropdowns, Messaging, Profile Editing, and Search filters.
+ */
+interface CareerOption {
+    id: string;
+    name: string;
+}
+/**
+ * Lightweight reference used across domains
+ */
+type CareerRef = CareerOption;
+
 interface SubscriptionPackage {
     tier: SubscriptionTier;
     description: string;
@@ -155,4 +173,4 @@ interface SubscriptionPackage {
     badge?: string;
 }
 
-export type { AccountRole, AuthReturn, AuthUser, ConnectionStats, ConnectionStatus, LoginPayload, NavItem, ProfileDTO, ProfileEducation, ProfileExperience, SignupPayload, SubscriptionPackage, SubscriptionTier, User, UserStatus };
+export type { AccountRole, AuthReturn, AuthUser, CareerOption, CareerRef, ConnectionStats, ConnectionStatus, LoginPayload, NavItem, ProfileDTO, ProfileEducation, ProfileExperience, SignupPayload, SubscriptionPackage, SubscriptionTier, User, UserSettings, UserStatus };

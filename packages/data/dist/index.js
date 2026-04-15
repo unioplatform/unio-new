@@ -49,6 +49,14 @@ var getSubscriptionByTier = (tier) => {
   return subscriptionData.find((p) => p.tier === tier);
 };
 
-export { getSubscriptionByTier, getSubscriptionPackages, subscriptionData };
+// src/auth/gender.data.ts
+var genders = [
+  { label: "Female", value: "FEMALE" },
+  { label: "Male", value: "MALE" },
+  { label: "Non-binary", value: "NON_BINARY" },
+  { label: "Prefer not to say", value: "PREFER_NOT_TO_SAY" }
+];
+
+export { genders, getSubscriptionByTier, getSubscriptionPackages, subscriptionData };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

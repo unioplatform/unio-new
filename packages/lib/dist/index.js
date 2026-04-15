@@ -1,4 +1,6 @@
 import { Home, FileText, Users, Compass, MessageCircle, Calendar, PanelsTopLeft } from 'lucide-react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import { authApi } from '@unio/api';
 
 // src/constants/footerLinks.ts
 var FOOTER_LINKS = {
@@ -298,6 +300,44 @@ var PRIVATE_NAV_ITEMS = [
   }
 ];
 
+// src/constants/auth/loginMessages.ts
+var LOGIN_MESSAGES = [
+  "Your world is moving. Let\u2019s move with it.",
+  "Every return is a step forward.",
+  "Good things grow when you show up.",
+  "Your presence matters here.",
+  "There\u2019s momentum in the choices you make.",
+  "Your next opportunity is already in motion.",
+  "Small steps create powerful outcomes.",
+  "Your network evolves when you do.",
+  "Everything you build here moves you forward.",
+  "Show up ready for what\u2019s next.",
+  "Your community is here for you.",
+  "You are part of something growing.",
+  "Every connection starts with a moment like this.",
+  "Your path is unfolding. Take the next step.",
+  "You\u2019re here for a reason. Trust your pace.",
+  "Lead with intention. Connect with purpose.",
+  "Confidence looks good on you.",
+  "Your network is active. So are your opportunities."
+];
+var getDailyLoginMessage = () => {
+  if (typeof window === "undefined") return LOGIN_MESSAGES[0];
+  try {
+    const today = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+    const stored = localStorage.getItem("unio_login_message");
+    const parsed = stored ? JSON.parse(stored) : null;
+    if (parsed?.date === today && parsed?.message) {
+      return parsed.message;
+    }
+    const newMessage = LOGIN_MESSAGES[Math.floor(Math.random() * LOGIN_MESSAGES.length)];
+    localStorage.setItem("unio_login_message", JSON.stringify({ date: today, message: newMessage }));
+    return newMessage;
+  } catch {
+    return LOGIN_MESSAGES[0];
+  }
+};
+
 // src/utils/generatePath.ts
 var generatePath = (pathGenerator, feature) => {
   if (!pathGenerator || !feature) return "";
@@ -308,6 +348,130 @@ var generatePath = (pathGenerator, feature) => {
   }
 };
 
-export { APP, ENV, FOOTER_LINKS, LINKS, PRIVATE_NAV_ITEMS, ROUTES, generatePath, mapCoordinates };
+// src/utils/auth/toAuthUser.ts
+var ROLE_MAP = {
+  USER: "USER",
+  BUSINESS: "BUSINESS",
+  ADMIN: "ADMIN"
+};
+var TIER_MAP = {
+  BASE: "BASE",
+  BASIC: "BASE",
+  PREMIUM: "PREMIUM",
+  ELITE: "ELITE"
+};
+var STATUS_MAP = {
+  ONLINE: "ONLINE",
+  AWAY: "AWAY",
+  OFFLINE: "OFFLINE",
+  BUSY: "BUSY"
+};
+function toAuthUser(user) {
+  if (!user) return null;
+  const profileData = user.profile || {};
+  const normalizedRole = user.accountRole ? ROLE_MAP[user.accountRole.toUpperCase()] : "USER";
+  const rawTierKey = (user.tier || user.subscription || profileData.tier || "BASE").toUpperCase();
+  const normalizedTier = TIER_MAP[rawTierKey] ?? "BASE";
+  const normalizedStatus = user.status ? STATUS_MAP[user.status.toUpperCase()] : "ONLINE";
+  return {
+    id: user.id,
+    email: user.email,
+    username: user.username,
+    slug: user.slug ?? user.username,
+    isVerified: user.isVerified ?? profileData.verified ?? false,
+    // Resolve Identity
+    firstName: user.firstName ?? profileData.firstName ?? user.first_name ?? null,
+    lastName: user.lastName ?? profileData.lastName ?? user.last_name ?? null,
+    // Professional Context
+    profile: {
+      bio: profileData.bio ?? null,
+      headline: profileData.headline ?? null,
+      location: profileData.location ?? null
+    },
+    // Strict Types
+    accountRole: normalizedRole ?? "USER",
+    tier: normalizedTier,
+    status: normalizedStatus ?? "ONLINE",
+    // Media
+    profilePicUrl: user.profilePicUrl ?? profileData.avatarUrl ?? profileData.profilePicUrl ?? null,
+    // Settings (Critical for Theme Engine)
+    userSettings: user.userSettings ?? null
+  };
+}
+function useUsername(initialValue = "") {
+  const [value, setValue] = useState(initialValue);
+  const [status, setStatus] = useState("idle");
+  const [suggestions, setSuggestions] = useState([]);
+  async function onChange(next) {
+    setValue(next);
+    if (next === initialValue && next !== "") {
+      setStatus("available");
+      setSuggestions([]);
+      return;
+    }
+    if (!next || next.length < 3) {
+      setStatus("idle");
+      setSuggestions([]);
+      return;
+    }
+    setStatus("checking");
+    try {
+      const res = await authApi.checkUsername(next);
+      if (res.available) {
+        setStatus("available");
+        setSuggestions([]);
+      } else {
+        setStatus("taken");
+        setSuggestions(res.suggestions ?? []);
+      }
+    } catch {
+      setStatus("idle");
+    }
+  }
+  return { value, status, suggestions, setValue, onChange };
+}
+function useDebounce(value, delay = 300) {
+  const [debounced, setDebounced] = useState(value);
+  const first = useRef(true);
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      setDebounced(value);
+      return;
+    }
+    const id = window.setTimeout(() => setDebounced(value), delay);
+    return () => window.clearTimeout(id);
+  }, [value, delay]);
+  return debounced;
+}
+function useDebouncedCallback(fn, delay = 300) {
+  const fnRef = useRef(fn);
+  const timerRef = useRef(null);
+  useEffect(() => {
+    fnRef.current = fn;
+  }, [fn]);
+  const cancel = useCallback(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+  const debounced = useMemo(() => {
+    const handler = (...args) => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      timerRef.current = setTimeout(() => {
+        fnRef.current(...args);
+        timerRef.current = null;
+      }, delay);
+    };
+    return handler;
+  }, [delay]);
+  useEffect(() => cancel, [cancel]);
+  return { callback: debounced, cancel };
+}
+
+export { APP, ENV, FOOTER_LINKS, LINKS, LOGIN_MESSAGES, PRIVATE_NAV_ITEMS, ROUTES, generatePath, getDailyLoginMessage, mapCoordinates, toAuthUser, useDebounce, useDebouncedCallback, useUsername };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

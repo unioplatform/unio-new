@@ -1,6 +1,6 @@
 import * as axios from 'axios';
 import { AxiosInstance } from 'axios';
-import { LoginPayload, AuthReturn, SignupPayload, AuthUser } from '@unio/types';
+import { LoginPayload, AuthReturn, SignupPayload, AuthUser, CareerOption } from '@unio/types';
 
 declare const client: axios.AxiosInstance;
 declare const getJSON: <T>(url: string, params?: any) => Promise<T>;
@@ -144,17 +144,40 @@ declare class AppError extends Error {
 }
 declare function setupInterceptors(instance: AxiosInstance, onUnauthorized?: () => void): void;
 
+declare const login: (payload: LoginPayload) => Promise<AuthReturn>;
+declare const signup: (payload: SignupPayload) => Promise<AuthReturn>;
+declare const refresh: () => Promise<AuthReturn>;
+declare const logout: () => Promise<void>;
+declare const getMe: () => Promise<{
+    user: AuthUser;
+}>;
+/**
+ * ✅ checkUsername
+ * Checks availability and returns potential suggestions if taken.
+ */
+declare const checkUsername: (username: string, firstName?: string, lastName?: string) => Promise<{
+    available: boolean;
+    suggestions?: string[];
+}>;
 declare const authApi: {
     login: (payload: LoginPayload) => Promise<AuthReturn>;
     signup: (payload: SignupPayload) => Promise<AuthReturn>;
     refresh: () => Promise<AuthReturn>;
-    logout: () => Promise<unknown>;
+    logout: () => Promise<void>;
     getMe: () => Promise<{
         user: AuthUser;
     }>;
-    checkUsername: (username: string) => Promise<{
+    checkUsername: (username: string, firstName?: string, lastName?: string) => Promise<{
         available: boolean;
+        suggestions?: string[];
     }>;
 };
 
-export { AppError, authApi, client, endpoints, getJSON, patchJSON, postJSON, setGlobalAuthToken, setupInterceptors };
+/**
+ * ✅ getCareers
+ * Fetches a list of careers for onboarding and profile setup.
+ * Supports optional query filtering.
+ */
+declare function getCareers(query?: string): Promise<CareerOption[]>;
+
+export { AppError, authApi, checkUsername, client, endpoints, getCareers, getJSON, getMe, login, logout, patchJSON, postJSON, refresh, setGlobalAuthToken, setupInterceptors, signup };

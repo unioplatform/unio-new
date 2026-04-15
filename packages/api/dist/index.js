@@ -188,16 +188,32 @@ function setupInterceptors(instance, onUnauthorized) {
 }
 
 // src/service/auth.ts
+var login = (payload) => postJSON(endpoints.auth.login(), payload);
+var signup = (payload) => postJSON(endpoints.auth.signup(), payload);
+var refresh = () => postJSON(endpoints.auth.refresh());
+var logout = () => postJSON(endpoints.auth.logout());
+var getMe = () => getJSON(endpoints.auth.me());
+var checkUsername = (username, firstName, lastName) => getJSON(
+  endpoints.auth.checkUsername(username, firstName, lastName)
+);
 var authApi = {
-  login: (payload) => postJSON(endpoints.auth.login(), payload),
-  signup: (payload) => postJSON(endpoints.auth.signup(), payload),
-  // 🚀 Added Refresh
-  refresh: () => postJSON(endpoints.auth.refresh()),
-  logout: () => postJSON(endpoints.auth.logout()),
-  getMe: () => getJSON(endpoints.auth.me()),
-  checkUsername: (username) => getJSON(endpoints.auth.checkUsername(username))
+  login,
+  signup,
+  refresh,
+  logout,
+  getMe,
+  checkUsername
 };
 
-export { AppError, authApi, client, endpoints, getJSON, patchJSON, postJSON, setGlobalAuthToken, setupInterceptors };
+// src/service/meta.ts
+async function getCareers(query) {
+  const response = await getJSON(
+    endpoints.meta.careers(),
+    query ? { query } : {}
+  );
+  return response.careers;
+}
+
+export { AppError, authApi, checkUsername, client, endpoints, getCareers, getJSON, getMe, login, logout, patchJSON, postJSON, refresh, setGlobalAuthToken, setupInterceptors, signup };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

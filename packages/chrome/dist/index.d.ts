@@ -34,4 +34,11 @@ type PrivateShellProps = {
 };
 declare const PrivateShell: React.FC<PrivateShellProps>;
 
-export { type FooterLinkItem, MarketingShell, type MarketingShellProps, PrivateShell, type PrivateShellProps, PublicFooter, type PublicFooterProps };
+type AuthShellProps = {
+    children: React.ReactNode;
+    className?: string;
+    tagline?: string;
+};
+declare const AuthShell: React.FC<AuthShellProps>;
+
+export { AuthShell, type AuthShellProps, type FooterLinkItem, MarketingShell, type MarketingShellProps, PrivateShell, type PrivateShellProps, PublicFooter, type PublicFooterProps };
