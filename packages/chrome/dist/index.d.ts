@@ -26,4 +26,12 @@ type MarketingShellProps = {
 };
 declare const MarketingShell: React.FC<MarketingShellProps>;
 
-export { type FooterLinkItem, MarketingShell, type MarketingShellProps, PublicFooter, type PublicFooterProps };
+type PrivateShellProps = {
+    children: React.ReactNode;
+    className?: string;
+    isSearchOpen?: boolean;
+    currentPath?: string;
+};
+declare const PrivateShell: React.FC<PrivateShellProps>;
+
+export { type FooterLinkItem, MarketingShell, type MarketingShellProps, PrivateShell, type PrivateShellProps, PublicFooter, type PublicFooterProps };

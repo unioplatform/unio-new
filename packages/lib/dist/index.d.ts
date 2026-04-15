@@ -1,3 +1,5 @@
+import { NavItem } from '@unio/types';
+
 /**
  * 📚 Shared Footer Links
  * Standardized marketing and legal links for the Unio ecosystem.
@@ -73,6 +75,9 @@ declare const LINKS: {
 /**
  * 🧭 Canonical App Routes
  */
+/**
+ * 🧭 Canonical App Routes
+ */
 declare const ROUTES: {
     readonly HOME: "/";
     readonly LOGIN: "/login";
@@ -82,8 +87,11 @@ declare const ROUTES: {
     readonly PRIVACY: "/legal/privacy";
     readonly DASHBOARD: "/app/dashboard";
     readonly FEED: "/app/feed";
-    readonly MESSAGES: "/app/messages";
+    readonly COMMUNITY: "/app/communities";
     readonly NETWORKING: "/app/networking";
+    readonly MESSAGES: "/app/messages";
+    readonly EVENTS: "/app/events";
+    readonly PLAYGROUND: "/app/playground";
     readonly SETTINGS: "/app/settings";
     readonly PROFILE: (username: string) => string;
 };
@@ -99,6 +107,8 @@ declare const APP: {
 
 declare const mapCoordinates: [number, number][];
 
+declare const PRIVATE_NAV_ITEMS: NavItem[];
+
 declare const generatePath: (pathGenerator: ((feature: any) => string | undefined) | null | undefined, feature: any) => string;
 
-export { APP, ENV, FOOTER_LINKS, type FooterSectionKey, LINKS, ROUTES, generatePath, mapCoordinates };
+export { APP, ENV, FOOTER_LINKS, type FooterSectionKey, LINKS, PRIVATE_NAV_ITEMS, ROUTES, generatePath, mapCoordinates };

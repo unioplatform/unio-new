@@ -13,7 +13,7 @@ export type MarketingShellProps = {
 export const MarketingShell: React.FC<MarketingShellProps> = ({
   children,
   className,
-  showFooter = true,
+  showFooter = true, 
   showHeader = true,
 }) => {
   return (

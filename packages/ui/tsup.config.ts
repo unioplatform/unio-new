@@ -9,5 +9,8 @@ export default defineConfig({
   splitting: false,
   target: "esnext",
   treeshake: true,
-  external: ["react", "react-dom"],
+  external: [
+    "react", 
+    "react-dom", 
+    "@unio/types"]
 });

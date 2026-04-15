@@ -18,5 +18,9 @@
   "devDependencies": {
     "tsup": "^8.5.1",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "lucide-react": "^1.8.0",
+     "@unio/types": "workspace:*"
   }
-}
+} 

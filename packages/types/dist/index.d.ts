@@ -1,3 +1,5 @@
+import { ElementType } from 'react';
+
 /**
  * 🛡️ Account Roles
  * Defines the permission levels across the Unio ecosystem.
@@ -134,6 +136,13 @@ interface ProfileDTO {
     hasPendingRequest: boolean;
 }
 
+interface NavItem {
+    name: string;
+    href: string;
+    icon: ElementType;
+    requiresAuth?: boolean;
+}
+
 interface SubscriptionPackage {
     tier: SubscriptionTier;
     description: string;
@@ -146,4 +155,4 @@ interface SubscriptionPackage {
     badge?: string;
 }
 
-export type { AccountRole, AuthReturn, AuthUser, ConnectionStats, ConnectionStatus, LoginPayload, ProfileDTO, ProfileEducation, ProfileExperience, SignupPayload, SubscriptionPackage, SubscriptionTier, User, UserStatus };
+export type { AccountRole, AuthReturn, AuthUser, ConnectionStats, ConnectionStatus, LoginPayload, NavItem, ProfileDTO, ProfileEducation, ProfileExperience, SignupPayload, SubscriptionPackage, SubscriptionTier, User, UserStatus };

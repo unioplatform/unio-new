@@ -1,3 +1,5 @@
+import { Home, FileText, Users, Compass, MessageCircle, Calendar, PanelsTopLeft } from 'lucide-react';
+
 // src/constants/footerLinks.ts
 var FOOTER_LINKS = {
   company: [
@@ -53,18 +55,25 @@ var LINKS = {
   SUPPORT: "mailto:support@uniohq.com"
 };
 var ROUTES = {
+  // Public / Marketing
   HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
   ABOUT: "/about",
   TERMS: "/legal/terms",
   PRIVACY: "/legal/privacy",
+  // Application Workspace (Internal Logic)
   DASHBOARD: "/app/dashboard",
   FEED: "/app/feed",
-  MESSAGES: "/app/messages",
+  COMMUNITY: "/app/communities",
   NETWORKING: "/app/networking",
+  MESSAGES: "/app/messages",
+  EVENTS: "/app/events",
+  PLAYGROUND: "/app/playground",
   SETTINGS: "/app/settings",
-  PROFILE: (username) => `/app/profile/${username}`
+  // 🎯 Vanity Profile (LinkedIn Style)
+  // This results in unio.com/alexsterling instead of unio.com/app/profile/alexsterling
+  PROFILE: (username) => `/${username}`
 };
 var APP = {
   NAME: "Unio",
@@ -252,6 +261,43 @@ var mapCoordinates = [
   [174.7645, -36.8509]
   // Auckland (New)
 ];
+var PRIVATE_NAV_ITEMS = [
+  {
+    name: "Dashboard",
+    href: "/app/dashboard",
+    icon: Home
+  },
+  {
+    name: "Feed",
+    href: "/app/feed",
+    icon: FileText
+  },
+  {
+    name: "Communities",
+    href: "/app/communities",
+    icon: Users
+  },
+  {
+    name: "Network",
+    href: "/app/networking",
+    icon: Compass
+  },
+  {
+    name: "Messages",
+    href: "/app/messages",
+    icon: MessageCircle
+  },
+  {
+    name: "Events",
+    href: "/app/events",
+    icon: Calendar
+  },
+  {
+    name: "Playground",
+    href: "/app/playground",
+    icon: PanelsTopLeft
+  }
+];
 
 // src/utils/generatePath.ts
 var generatePath = (pathGenerator, feature) => {
@@ -263,6 +309,6 @@ var generatePath = (pathGenerator, feature) => {
   }
 };
 
-export { APP, ENV, FOOTER_LINKS, LINKS, ROUTES, generatePath, mapCoordinates };
+export { APP, ENV, FOOTER_LINKS, LINKS, PRIVATE_NAV_ITEMS, ROUTES, generatePath, mapCoordinates };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

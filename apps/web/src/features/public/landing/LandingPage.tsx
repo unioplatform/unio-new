@@ -2,10 +2,10 @@
 
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-
+ 
 import {  
   // Hero,
-  // Playground,
+  Playground,
   GlobalNetwork,
   SubscriptionSection, 
 } from "./sections";
@@ -27,7 +27,7 @@ export const LandingPage: React.FC = () => {
       {/* <Hero /> */}
 
       {/* 🧠 PLAYGROUND */}
-      {/* <Playground /> */}
+      <Playground />
 
       {/* 🌍 GLOBAL MAP */}
       <GlobalNetwork />

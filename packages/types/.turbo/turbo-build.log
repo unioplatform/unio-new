@@ -13,7 +13,7 @@
 Generated an empty chunk: "index".
 [32mESM[39m [1mdist/index.js     [22m[32m68.00 B[39m
 [32mESM[39m [1mdist/index.js.map [22m[32m69.00 B[39m
-[32mESM[39m ⚡️ Build success in 19ms
+[32mESM[39m ⚡️ Build success in 26ms
 DTS Build start
-DTS ⚡️ Build success in 347ms
-DTS dist/index.d.ts 3.59 KB
+DTS ⚡️ Build success in 285ms
+DTS dist/index.d.ts 3.75 KB

@@ -1,0 +1,67 @@
+/* -----------------------------------------------------------------------------
+   Playground.styles.css — Micro-Styles for Playground Section
+   -----------------------------------------------------------------------------
+   IMPORTANT:
+   - No colors, no layout styling, no padding/margins
+   - Only animation primitives and small utilities
+   - Keeps the Playground module clean and self-contained
+----------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Cursor blink animation
+--------------------------------------------------------- */
+.cursor-blink {
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ---------------------------------------------------------
+   Hide scrollbars for scrollable toolbars / canvas
+--------------------------------------------------------- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Optional: whitespace utility for typewriter sequences */
+.whitespace-pre {
+  white-space: pre;
+}
+
+/* ---------------------------------------------------------
+   Cursor Colors (Updated for User 1 / User 2)
+--------------------------------------------------------- */
+
+/* User 2 (Collaborator) - Previously Maria */
+[data-cursor="user2"] {
+  background-color: hsl(340 75% 65%); /* Pink */
+}
+
+/* User 1 (Owner) - Previously Carlos */
+[data-cursor="user1"] {
+  background-color: hsl(215 85% 62%); /* Blue */
+}
+
+/* Fallback/System */
+[data-cursor="neutral"] {
+  background-color: var(--color-foreground);
+}
+
+/* ---------------------------------------------------------
+   Overrides
+--------------------------------------------------------- */
+/* If you want to prevent blinking while typing happens via GSAP, 
+   you can keep this. If you want them to blink when idle, remove this block.
+*/
+.cursor-blink,
+.cursor-idle-blink {
+  animation: none !important;
+}

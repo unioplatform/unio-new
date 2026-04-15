@@ -18,6 +18,7 @@ export default defineConfig({
     "react-router-dom",
     "clsx",
     "@unio/ui",
-    "@unio/lib"
+    "@unio/lib",
+    "@unio/types"
   ]
 });

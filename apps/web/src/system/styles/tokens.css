@@ -1,4 +1,4 @@
-/* tokens.css */
+/* apps/web/src/styles/tokens.css */
 
 :root {
   /* LAYOUT */
@@ -6,6 +6,15 @@
   --max-width-marketing: 1320px;
   --container-padding: 24px;
   --layout-gap: 24px;
+
+  /* HEADER MATH (Matches PrivateHeaderShell.tsx) 
+     Top Offset (pt-6) = 24px
+     Bar Height (h-[72px]) = 72px
+     Desired Gap to content = 32px
+  */
+  --header-margin-top: 24px;
+  --header-height: 72px;
+  --header-inner-gap: 32px; 
 
   --section-lg: 120px;
   --section-md: 96px;

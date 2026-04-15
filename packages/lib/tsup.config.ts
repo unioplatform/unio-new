@@ -11,4 +11,7 @@ export default defineConfig({
   splitting: false,
   target: "esnext",
   treeshake: true,
+  external: [
+  "@unio/types"
+  ]
 });

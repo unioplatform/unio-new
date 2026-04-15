@@ -10,9 +10,9 @@
 [34mCLI[39m Target: esnext
 [34mCLI[39m Cleaning output folder
 [34mESM[39m Build start
-[32mESM[39m [1mdist/index.js     [22m[32m9.72 KB[39m
-[32mESM[39m [1mdist/index.js.map [22m[32m19.05 KB[39m
-[32mESM[39m ⚡️ Build success in 37ms
+[32mESM[39m [1mdist/index.js     [22m[32m22.87 KB[39m
+[32mESM[39m [1mdist/index.js.map [22m[32m45.20 KB[39m
+[32mESM[39m ⚡️ Build success in 51ms
 DTS Build start
-DTS ⚡️ Build success in 577ms
-DTS dist/index.d.ts 739.00 B
+DTS ⚡️ Build success in 778ms
+DTS dist/index.d.ts 974.00 B

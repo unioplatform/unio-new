@@ -12,19 +12,31 @@ export const LINKS = {
 /**
  * 🧭 Canonical App Routes
  */
+/**
+ * 🧭 Canonical App Routes
+ */
 export const ROUTES = {
+  // Public / Marketing
   HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
   ABOUT: "/about",
   TERMS: "/legal/terms",
   PRIVACY: "/legal/privacy",
+
+  // Application Workspace (Internal Logic)
   DASHBOARD: "/app/dashboard",
   FEED: "/app/feed",
-  MESSAGES: "/app/messages",
+  COMMUNITY: "/app/communities",
   NETWORKING: "/app/networking",
+  MESSAGES: "/app/messages",
+  EVENTS: "/app/events",
+  PLAYGROUND: "/app/playground",
   SETTINGS: "/app/settings",
-  PROFILE: (username: string) => `/app/profile/${username}`,
+
+  // 🎯 Vanity Profile (LinkedIn Style)
+  // This results in unio.com/alexsterling instead of unio.com/app/profile/alexsterling
+  PROFILE: (username: string) => `/${username}`,
 } as const;
 
 /**

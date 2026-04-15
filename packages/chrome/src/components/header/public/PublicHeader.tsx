@@ -24,18 +24,18 @@ export const PublicHeader: React.FC<PublicHeaderProps> = ({
         >
           <Logo
             variant="lockup"
-            size="md"
+            size="sm" // ✅ FIX: smaller, consistent sizing
 
-            /* 🔥 ICON ANIMATION */
+            /* ✈️ ICON ANIMATION (no size override!) */
             iconClassName="
-              text-accent text-[1.1rem]
+              text-accent
               transition-transform duration-300 ease-out
               group-hover:-translate-y-[2px]
             "
 
-            /* ❌ NO HOVER EFFECT ON TEXT */
+            /* 🔤 CLEAN WORDMARK (no manual scaling) */
             wordmarkClassName="
-              text-text-primary font-semibold tracking-tight text-[1.5rem]
+              text-text-primary font-semibold tracking-tight
             "
           />
         </Link>
@@ -60,7 +60,7 @@ export const PublicHeader: React.FC<PublicHeaderProps> = ({
             to={ROUTES.SIGNUP}
             variant="primary"
             size="sm"
-            className="rounded-full px-5"
+            className="px-4"
           >
             Get Started
           </Button>
