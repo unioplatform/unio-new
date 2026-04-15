@@ -1,5 +1,4 @@
 @layer components {
-
   #root {
     @apply min-h-full flex flex-col;
   }
@@ -8,6 +7,7 @@
     @apply w-full flex justify-center;
   }
 
+  /* 🌍 DEFAULT (marketing / public) */
   .unio-container {
     @apply w-full max-w-unio-max mx-auto px-unio-padding;
   }
@@ -16,15 +16,17 @@
     @apply w-full max-w-unio-marketing mx-auto px-unio-padding;
   }
 
+  /* 🔐 PRIVATE / DASHBOARD */
+  .unio-container-private {
+    @apply w-full max-w-none px-6 lg:px-10 xl:px-12;
+  }
+
+  .unio-layout-private {
+    @apply w-full flex justify-start;
+  }
+
+  /* sections stay same */
   .unio-section {
     @apply py-section-md;
-  }
-
-  .unio-section-lg {
-    @apply py-section-lg;
-  }
-
-  .unio-section-sm {
-    @apply py-section-sm;
   }
 }

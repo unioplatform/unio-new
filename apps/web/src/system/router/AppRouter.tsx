@@ -36,7 +36,7 @@ function ProtectedRoute({
   }
 
   if (roles && user && !roles.includes(user.accountRole)) {
-    return <Navigate to="/app/dashboard" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return <>{children}</>;

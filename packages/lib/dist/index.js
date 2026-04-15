@@ -55,24 +55,23 @@ var LINKS = {
   SUPPORT: "mailto:support@uniohq.com"
 };
 var ROUTES = {
-  // Public / Marketing
+  // 🌍 Public / Marketing
   HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
   ABOUT: "/about",
   TERMS: "/legal/terms",
   PRIVACY: "/legal/privacy",
-  // Application Workspace (Internal Logic)
-  DASHBOARD: "/app/dashboard",
-  FEED: "/app/feed",
-  COMMUNITY: "/app/communities",
-  NETWORKING: "/app/networking",
-  MESSAGES: "/app/messages",
-  EVENTS: "/app/events",
-  PLAYGROUND: "/app/playground",
-  SETTINGS: "/app/settings",
-  // 🎯 Vanity Profile (LinkedIn Style)
-  // This results in unio.com/alexsterling instead of unio.com/app/profile/alexsterling
+  // 🚀 Core App (CLEAN URLS)
+  DASHBOARD: "/dashboard",
+  FEED: "/feed",
+  COMMUNITY: "/communities",
+  NETWORKING: "/networking",
+  MESSAGES: "/messages",
+  EVENTS: "/events",
+  PLAYGROUND: "/playground",
+  SETTINGS: "/settings",
+  // 👤 Vanity Profile (LinkedIn style)
   PROFILE: (username) => `/${username}`
 };
 var APP = {
@@ -264,37 +263,37 @@ var mapCoordinates = [
 var PRIVATE_NAV_ITEMS = [
   {
     name: "Dashboard",
-    href: "/app/dashboard",
+    href: ROUTES.DASHBOARD,
     icon: Home
   },
   {
     name: "Feed",
-    href: "/app/feed",
+    href: ROUTES.FEED,
     icon: FileText
   },
   {
     name: "Communities",
-    href: "/app/communities",
+    href: ROUTES.COMMUNITY,
     icon: Users
   },
   {
     name: "Network",
-    href: "/app/networking",
+    href: ROUTES.NETWORKING,
     icon: Compass
   },
   {
     name: "Messages",
-    href: "/app/messages",
+    href: ROUTES.MESSAGES,
     icon: MessageCircle
   },
   {
     name: "Events",
-    href: "/app/events",
+    href: ROUTES.EVENTS,
     icon: Calendar
   },
   {
     name: "Playground",
-    href: "/app/playground",
+    href: ROUTES.PLAYGROUND,
     icon: PanelsTopLeft
   }
 ];

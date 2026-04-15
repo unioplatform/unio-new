@@ -1,3 +1,5 @@
+// 📁 routes.ts
+
 /**
  * 🔗 External Social & Support Links
  */
@@ -12,11 +14,8 @@ export const LINKS = {
 /**
  * 🧭 Canonical App Routes
  */
-/**
- * 🧭 Canonical App Routes
- */
 export const ROUTES = {
-  // Public / Marketing
+  // 🌍 Public / Marketing
   HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
@@ -24,18 +23,17 @@ export const ROUTES = {
   TERMS: "/legal/terms",
   PRIVACY: "/legal/privacy",
 
-  // Application Workspace (Internal Logic)
-  DASHBOARD: "/app/dashboard",
-  FEED: "/app/feed",
-  COMMUNITY: "/app/communities",
-  NETWORKING: "/app/networking",
-  MESSAGES: "/app/messages",
-  EVENTS: "/app/events",
-  PLAYGROUND: "/app/playground",
-  SETTINGS: "/app/settings",
+  // 🚀 Core App (CLEAN URLS)
+  DASHBOARD: "/dashboard",
+  FEED: "/feed",
+  COMMUNITY: "/communities",
+  NETWORKING: "/networking",
+  MESSAGES: "/messages",
+  EVENTS: "/events",
+  PLAYGROUND: "/playground",
+  SETTINGS: "/settings",
 
-  // 🎯 Vanity Profile (LinkedIn Style)
-  // This results in unio.com/alexsterling instead of unio.com/app/profile/alexsterling
+  // 👤 Vanity Profile (LinkedIn style)
   PROFILE: (username: string) => `/${username}`,
 } as const;
 

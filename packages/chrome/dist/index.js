@@ -565,7 +565,7 @@ var PrivateShell = ({
             isSearchOpen
           }
         ),
-        /* @__PURE__ */ jsx("main", { className: "flex-1 flex flex-col pt-8", children: /* @__PURE__ */ jsx("div", { className: "unio-layout w-full", children: /* @__PURE__ */ jsx("div", { className: "unio-container w-full h-full", children }) }) })
+        /* @__PURE__ */ jsx("main", { className: "flex-1 flex flex-col pt-8", children: /* @__PURE__ */ jsx("div", { className: "unio-layout-private", children: /* @__PURE__ */ jsx("div", { className: "unio-container-private w-full h-full", children }) }) })
       ]
     }
   );

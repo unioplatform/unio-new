@@ -38,8 +38,8 @@ export const PrivateShell: React.FC<PrivateShellProps> = ({
           We use 'pt-8' just to give the content some nice whitespace.
       */}
       <main className="flex-1 flex flex-col pt-8">
-        <div className="unio-layout w-full">
-          <div className="unio-container w-full h-full">
+          <div className="unio-layout-private">
+            <div className="unio-container-private w-full h-full">
             {children}
           </div>
         </div>

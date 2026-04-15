@@ -1,48 +1,52 @@
-import { 
-  Home, 
-  FileText, 
-  Users, 
-  Compass, 
-  MessageCircle, // Your upgraded version
-  Calendar, 
-  PanelsTopLeft  // Your upgraded version
+// 📁 navigation.ts
+
+import {
+  Home,
+  FileText,
+  Users,
+  Compass,
+  MessageCircle,
+  Calendar,
+  PanelsTopLeft,
 } from "lucide-react";
+
 import type { NavItem } from "@unio/types";
+import { ROUTES } from "./sites";
 
 export const PRIVATE_NAV_ITEMS: NavItem[] = [
   {
     name: "Dashboard",
-    href: "/app/dashboard",
+    href: ROUTES.DASHBOARD,
     icon: Home,
   },
   {
     name: "Feed",
-    href: "/app/feed",
+    href: ROUTES.FEED,
     icon: FileText,
   },
   {
     name: "Communities",
-    href: "/app/communities",
+    href: ROUTES.COMMUNITY,
     icon: Users,
   },
   {
     name: "Network",
-    href: "/app/networking",
+    href: ROUTES.NETWORKING,
     icon: Compass,
   },
   {
     name: "Messages",
-    href: "/app/messages",
+    href: ROUTES.MESSAGES,
     icon: MessageCircle,
   },
   {
     name: "Events",
-    href: "/app/events",
+    href: ROUTES.EVENTS,
     icon: Calendar,
   },
   {
     name: "Playground",
-    href: "/app/playground",
+    href: ROUTES.PLAYGROUND,
     icon: PanelsTopLeft,
   },
 ];

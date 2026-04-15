@@ -75,9 +75,6 @@ declare const LINKS: {
 /**
  * 🧭 Canonical App Routes
  */
-/**
- * 🧭 Canonical App Routes
- */
 declare const ROUTES: {
     readonly HOME: "/";
     readonly LOGIN: "/login";
@@ -85,14 +82,14 @@ declare const ROUTES: {
     readonly ABOUT: "/about";
     readonly TERMS: "/legal/terms";
     readonly PRIVACY: "/legal/privacy";
-    readonly DASHBOARD: "/app/dashboard";
-    readonly FEED: "/app/feed";
-    readonly COMMUNITY: "/app/communities";
-    readonly NETWORKING: "/app/networking";
-    readonly MESSAGES: "/app/messages";
-    readonly EVENTS: "/app/events";
-    readonly PLAYGROUND: "/app/playground";
-    readonly SETTINGS: "/app/settings";
+    readonly DASHBOARD: "/dashboard";
+    readonly FEED: "/feed";
+    readonly COMMUNITY: "/communities";
+    readonly NETWORKING: "/networking";
+    readonly MESSAGES: "/messages";
+    readonly EVENTS: "/events";
+    readonly PLAYGROUND: "/playground";
+    readonly SETTINGS: "/settings";
     readonly PROFILE: (username: string) => string;
 };
 /**
