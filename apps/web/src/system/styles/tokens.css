@@ -33,6 +33,11 @@
   --border-raw: 222 20% 70%;
   --border-subtle-raw: 222 15% 80%;
   --border-faint-raw: 222 15% 90%;
+
+  --widget-bg: 255 255 255 / 0.06; 
+  --widget-border-light: 255 255 255 / 0.2;
+  --widget-border-dark: 0 0% 0% / 0.1;
+  --widget-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
 }
 
 /* 🌙 DARK MODE */
@@ -45,4 +50,10 @@
   --accent-1: 145 18% 51%;
   --accent-2: 145 18% 62%;
   --accent-bg: 145 18% 20%;
+
+  --widget-bg: 255 255 255 / 0.03;
+  --widget-border-light: 255 255 255 / 0.1;
+  --widget-border-dark: 0 0% 0% / 0.4;
+  --widget-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
 }
+

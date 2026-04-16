@@ -28,15 +28,39 @@
   /* 🔐 AUTH SPECIFIC LAYOUT */
   .unio-container-auth {
     @apply w-full max-w-unio-max mx-auto px-unio-padding;
-    /* This uses your 1128px max-width from the config */
   }
 
   .unio-auth-grid {
     @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center;
   }
 
-  /* sections stay same */
   .unio-section {
     @apply py-section-md;
   }
+
+  /* 🧊 PRO GLASS UTILITY */
+.unio-glass {
+  /* Use apply for standard Tailwind utilities only */
+  @apply backdrop-blur-xl rounded-unio-lg;
+  
+  /* Fallback/Manual background */
+  background: linear-gradient(to bottom right, hsl(var(--widget-bg)), transparent);
+  
+  /* The Bevel Physics (Manual CSS to avoid theme sync errors) */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  /* The 3D Shadow Stack (Manual CSS) */
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 0 10px 20px -5px rgba(0,0,0,0.1);
+}
+
+/* Dark mode depth adjustment */
+.dark .unio-glass {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+}
+ 
 }
